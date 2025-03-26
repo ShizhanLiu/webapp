@@ -1,6 +1,14 @@
 import Dashboard from "./pages/dashboard/Dashboard"
 
-const App=()=>{
-  return <Dashboard/>;
-}
-export default App
+import Navbar from "./component/Navbar";
+
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Dashboard />
+    </>
+  );
+};
+
+export default App;
