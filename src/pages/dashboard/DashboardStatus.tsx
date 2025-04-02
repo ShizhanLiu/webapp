@@ -13,7 +13,7 @@ const DashboardStatus = ({loggedInUser, totalExpenses}: Props) => {
                 <h5 className="mb-4">Total Expenses</h5>
                 <h3>
                     <span className="bagde rounded-pill app-primary-bg-color">
-                        {CurrencyUtils.formatToUSD(totalExpenses)}
+                        {CurrencyUtils.formatToINR(totalExpenses)}
                     </span>
                 </h3>
             </div>

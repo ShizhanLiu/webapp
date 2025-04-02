@@ -1,8 +1,8 @@
 class CurrencyUtils {
-    static formatToUSD(amount: number) {
-        return new Intl.NumberFormat('en-US', {
+    static formatToINR(amount: number) {
+        return new Intl.NumberFormat('en-IN', {
             style: 'currency',
-            currency: 'USD'
+            currency: 'INR'
         }).format(amount);
     }
 }

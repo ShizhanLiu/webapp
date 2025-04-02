@@ -4,19 +4,21 @@ import { Expense } from "../../model/Expense";
 import DashboardStatus from "./DashboardStatus";
 
 const Dashboard = () => {
-  const loggedInUser: string = 'name@example.com';
+  const loggedInUser: string = "bushan@example.com";
 
   const { expenses, error, isLoading } = useExpenses();
 
-  const totalExpenses = expenses.reduce((acc: number, expense: Expense) => acc + expense.amount, 0);
-
+  const totalExpenses = expenses.reduce(
+    (acc: number, expense: Expense) => acc + expense.amount,
+    0
+  );
   return (
     <div className="container">
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <DashboardStatus 
-        loggedInUser={loggedInUser} 
-        totalExpenses={totalExpenses} 
+      <DashboardStatus
+        loggedInUser={loggedInUser}
+        totalExpenses={totalExpenses}
       />
       <hr />
       <ExpenseList expenses={expenses} />

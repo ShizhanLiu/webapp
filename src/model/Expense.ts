@@ -3,7 +3,7 @@ export interface Expense {
     expenseId?: string;
     name: string;
     note: string;
-    amount: string;
+    amount: number;
     date: string;
     category: string;
 }
