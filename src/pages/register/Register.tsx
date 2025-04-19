@@ -17,8 +17,8 @@ const Register = () => {
         onSubmit: (profile: Profile, {resetForm}) => {
             signup(profile);
             resetForm();
-        }
-    })
+        },
+    });
     return <div className="d-flex justify-content-center align-items-center login-background">
         <div className="container col-md-4 col-sm-12">
             {isLoading && <p>Loading...</p>}
@@ -87,11 +87,23 @@ const Register = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                     />
-                    {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="text-danger fst-italic">{formik.errors.confirmPassword}</div> : null}
-                </div>
-                <button className="btn btn-sm app-primary-bg-color btn-outline-light" type="submit">
-                    Register
-                </button>
+                    {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+                        <div className="text-danger fst-italic">
+                            {formik.errors.confirmPassword}</div>
+                        ) : null}
+                        </div>
+                {isLoading && (
+                    <button className="btn btn-sm app-primary-bg-color btn-outline-light" type = "submit" disabled>
+                        Loading...
+                    </button>
+                )}
+                {!isLoading && (
+                    <button 
+                    className="btn btn-sm app-primary-bg-color btn-outline-light" 
+                    type="submit">
+                        Register
+                    </button>
+                )}                
             </form>
         </div>
     </div>

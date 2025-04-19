@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <div className="container">
       {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p className="text-danger">{error}</p>}
       <DashboardStatus
         loggedInUser={loggedInUser}
         totalExpenses={totalExpenses}
