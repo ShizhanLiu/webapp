@@ -1,8 +1,8 @@
-import { useAuthContext } from "./useAuthContext";
 import { useState } from "react"
 import { AuthRequest } from "../model/AuthRequest";
 import { authenticate } from "../services/auth-service";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
     const [error, setError] = useState<string>("");
@@ -25,10 +25,9 @@ export const useLogin = () => {
                 setError(error.message);
             }
         })
+        .catch(error => console.log(error))
         .finally(() => setLoader(false));
 
     }
     return {error, isLoading, login};
 }
-
-

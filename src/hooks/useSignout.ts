@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { signout } from "../services/auth-service"
+import { useAuthContext } from "./useAuthContext";
 export const useSignout = () => {
+    const { updateAuth} = useAuthContext();
     const [error, setError] = useState<string>("");
     const [isLoading, setLoader] = useState<boolean>(false);
     const logout = () =>{
@@ -16,5 +18,5 @@ export const useSignout = () => {
         .finally(() => setLoader(false));
 
     }
-    return {error, isLoading, logout};
+    return { logout};
 }
