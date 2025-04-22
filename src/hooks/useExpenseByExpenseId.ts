@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Expense } from "../model/Expense";
 import { getExpenseByExpenseId } from "../services/expense-service";
 
-const useExpenseByExpenseId = (expenseId: string) => {
+    const useExpenseByExpenseId = (expenseId: string) => {
   const [expense, setExpense] = useState<Expense | undefined>();
   const [errors, setErrors] = useState<string>("");
   const [isLoading, setLoader] = useState<boolean>(false);
