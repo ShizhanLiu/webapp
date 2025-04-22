@@ -1,21 +1,23 @@
 import ExpenseList from "../../component/ExpenseList";
 import useExpenses from "../../hooks/useExpenses";
 import { Expense } from "../../model/Expense";
+import AppHelper from "../../utils/AppHelper";
 import DashboardStatus from "./DashboardStatus";
 
 const Dashboard = () => {
-  const loggedInUser: string = "bushan@example.com";
+  const loggedInUser: string = AppHelper.getLoggedInUser();
 
   const { expenses, error, isLoading } = useExpenses();
 
   const totalExpenses = expenses.reduce(
-    (acc: number, expense: Expense) => acc + expense.amount,
+    (acc: number, expense: Expense) => acc + parseFloat(expense.amount),
     0
   );
+
   return (
     <div className="container">
       {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p className="text-danger">{error}</p>}
       <DashboardStatus
         loggedInUser={loggedInUser}
         totalExpenses={totalExpenses}

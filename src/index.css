@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 body, html {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.1em;
@@ -8,9 +9,10 @@ body, html {
     color: #79589F;
 }
 
-nav,.app-primary-bg-color {
-    background-color: #79589F;
+nav, .app-primary-bg-color {
+    background-color: #79589F !important;
 }
+
 .card-body {
     padding: 0 !important;
 }
@@ -26,4 +28,14 @@ nav,.app-primary-bg-color {
 .navbar-nav .nav-link, .navbar-toggler {
     color: white;
     border-color: white;
+}
+
+.login-background {
+    background-image: url('../src/assets/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
