@@ -3,7 +3,7 @@ import { getExpenses } from "../services/expense-service";
 import { Expense } from "../model/Expense";
 
 const useExpenses = () => {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+    const [expenses, setExpenses] = useState<Expense[]>([]);
   const [error, setErrors] = useState(null);
   const [isLoading, setLoader] = useState(false);
   useEffect(() => {
