@@ -3,16 +3,21 @@ import useExpenses from "../../hooks/useExpenses";
 import { Expense } from "../../model/Expense";
 import AppHelper from "../../utils/AppHelper";
 import DashboardStatus from "./DashboardStatus";
+import BudgetList from "../../component/BudgetList";
+import useBudgets from "../../hooks/useBudgets";
+
 
 const Dashboard = () => {
   const loggedInUser: string = AppHelper.getLoggedInUser();
 
-  const { expenses, error, isLoading } = useExpenses();
+  var { expenses, error, isLoading } = useExpenses();
 
   const totalExpenses = expenses.reduce(
     (acc: number, expense: Expense) => acc + parseFloat(expense.amount),
     0
   );
+
+  var { budgets, error, isLoading } = useBudgets();
 
   return (
     <div className="container">
@@ -24,6 +29,7 @@ const Dashboard = () => {
       />
       <hr />
       <ExpenseList expenses={expenses} />
+      <BudgetList budgets={budgets} />
     </div>
   );
 };

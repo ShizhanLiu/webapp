@@ -22,6 +22,9 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/new">
                   New Expense
                 </NavLink>
+                <NavLink className="nav-link" to="/newBudget">
+                  New Budget
+                </NavLink>
                 <NavLink className="nav-link" to="/reports">
                   Reports
                 </NavLink>
