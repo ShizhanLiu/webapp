@@ -19,15 +19,17 @@ const Navbar = () => {
                 <NavLink className="nav-link" to="/">
                   Dashboard
                 </NavLink>
-                <NavLink className="nav-link" to="/new">
-                  New Expense
-                </NavLink>
                 <NavLink className="nav-link" to="/newBudget">
                   New Budget
+                </NavLink>
+                <NavLink className="nav-link" to="/new">
+                  New Expense
                 </NavLink>
                 <NavLink className="nav-link" to="/reports">
                   Reports
                 </NavLink>
+
+
               </>
             ) : null}
           </div>
@@ -35,15 +37,16 @@ const Navbar = () => {
         <div className="d-flex" role="search">
           {!isAuthenticated ? (
             <>
-              <NavLink className="btn btn-sm btn-outline-light" to="/login">
-                Login
-              </NavLink>
               <NavLink
                 className="btn btn-sm btn-outline-light mx-1"
                 to="/register"
               >
                 Register
               </NavLink>
+              <NavLink className="btn btn-sm btn-outline-light" to="/login">
+                Login
+              </NavLink>
+       
             </>
           ) : null}
           {isAuthenticated ? (

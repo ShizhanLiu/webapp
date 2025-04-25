@@ -28,8 +28,9 @@ const Dashboard = () => {
         totalExpenses={totalExpenses}
       />
       <hr />
+      <BudgetList budgets={budgets} />  
+      <div style={{ marginTop: '30px' }}></div>
       <ExpenseList expenses={expenses} />
-      <BudgetList budgets={budgets} />
     </div>
   );
 };

@@ -6,11 +6,11 @@ body, html {
 }
 
 .app-primary-color {
-    color: #79589F;
+    color:  #6787a5;
 }
 
 nav, .app-primary-bg-color {
-    background-color: #79589F !important;
+    background-color: #6787a5 !important;
 }
 
 .card-body {
@@ -18,7 +18,7 @@ nav, .app-primary-bg-color {
 }
 
 .border-bottom-1 {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(211, 206, 206);
 }
 
 .card-subtitle {
@@ -31,7 +31,7 @@ nav, .app-primary-bg-color {
 }
 
 .login-background {
-    background-image: url('../src/assets/login-bg.jpg');
+    background-image: url('../src/assets/backgroundLogin.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
