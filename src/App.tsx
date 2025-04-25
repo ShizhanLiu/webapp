@@ -7,6 +7,8 @@ import NewExpense from "./pages/expense/NewExpense";
 import ExpenseDetails from "./pages/expense/ExpenseDetails";
 import ExpenseReports from "./pages/expense/ExpenseReports";
 import { useAuthContext } from "./hooks/useAuthContext";
+import NewBudget from "./pages/budget/NewBudget";
+import BudgetDetails from "./pages/budget/BudgetDetails";
 
 const App = () => {
   const { isAuthenticated } = useAuthContext();
@@ -45,6 +47,20 @@ const App = () => {
           element={
             isAuthenticated ? <ExpenseReports /> : <Navigate to="/login" />
           }
+        />
+        <Route
+          path="/newBudget"
+          element={isAuthenticated ? <NewBudget /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/view/budget/:budgetId"
+          element={
+            isAuthenticated ? <BudgetDetails /> : <Navigate to="/login" />
+          }
+        />
+        <Route
+          path="/edit/budget/:budgetId"
+          element={isAuthenticated ? <NewBudget /> : <Navigate to="/login" />}
         />
       </Routes>
     </BrowserRouter>
